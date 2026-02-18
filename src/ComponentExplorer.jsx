@@ -10,10 +10,16 @@ export default function ComponentExplorer({ tokens: t, primary, radius, headingW
   const componentNames = Object.keys(COMPONENT_DEFS);
   const comp = COMPONENT_DEFS[activeComponent];
   const variantNames = Object.keys(comp.variants);
-  const variant = comp.variants[activeVariant];
+
+  // Use the active variant if it exists for this component, otherwise default to first variant
+  const safeVariantName = comp.variants[activeVariant] ? activeVariant : variantNames[0];
+  const variant = comp.variants[safeVariantName];
 
   useEffect(() => {
-    setActiveVariant(Object.keys(COMPONENT_DEFS[activeComponent].variants)[0]);
+    // Reset to first variant when component changes
+    if (!comp.variants[activeVariant]) {
+      setActiveVariant(variantNames[0]);
+    }
   }, [activeComponent]);
 
   return (
@@ -71,11 +77,11 @@ export default function ComponentExplorer({ tokens: t, primary, radius, headingW
                 {variantNames.map(name => (
                   <button key={name} className="tok-btn" onClick={() => setActiveVariant(name)}
                     style={{
-                      background: activeVariant === name ? '#27272a' : '#18181b',
-                      border: `1px solid ${activeVariant === name ? '#3f3f46' : '#27272a'}`,
+                      background: safeVariantName === name ? '#27272a' : '#18181b',
+                      border: `1px solid ${safeVariantName === name ? '#3f3f46' : '#27272a'}`,
                       borderRadius: 6, padding: '6px 14px', fontSize: 12,
                       fontFamily: "'DM Sans', sans-serif",
-                      color: activeVariant === name ? '#d4d4d8' : '#52525b', fontWeight: 500,
+                      color: safeVariantName === name ? '#d4d4d8' : '#52525b', fontWeight: 500,
                       cursor: 'pointer',
                     }}>{name}</button>
                 ))}
@@ -97,9 +103,9 @@ export default function ComponentExplorer({ tokens: t, primary, radius, headingW
                   <div key={name} onClick={() => setActiveVariant(name)}
                     style={{
                       flex: 1, background: '#08080a', borderRadius: 8, padding: 12,
-                      border: `1px solid ${activeVariant === name ? '#3f3f46' : '#1a1a1d'}`,
+                      border: `1px solid ${safeVariantName === name ? '#3f3f46' : '#1a1a1d'}`,
                       cursor: 'pointer', transition: 'all 0.2s ease',
-                      opacity: activeVariant === name ? 1 : 0.5,
+                      opacity: safeVariantName === name ? 1 : 0.5,
                     }}>
                     <div style={{ transform: 'scale(0.75)', transformOrigin: 'top left', pointerEvents: 'none' }}>
                       {v.render(t, radius, headingWeight, gap, primary)}
