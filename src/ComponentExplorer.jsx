@@ -57,6 +57,7 @@ export default function ComponentExplorer({ tokens: t, primary, radius, headingW
                       borderRadius: 6, padding: '6px 14px', fontSize: 12,
                       fontFamily: "'DM Sans', sans-serif",
                       color: activeComponent === name ? '#d4d4d8' : '#52525b', fontWeight: 500,
+                      cursor: 'pointer',
                     }}>{name}</button>
                 ))}
               </div>
@@ -75,6 +76,7 @@ export default function ComponentExplorer({ tokens: t, primary, radius, headingW
                       borderRadius: 6, padding: '6px 14px', fontSize: 12,
                       fontFamily: "'DM Sans', sans-serif",
                       color: activeVariant === name ? '#d4d4d8' : '#52525b', fontWeight: 500,
+                      cursor: 'pointer',
                     }}>{name}</button>
                 ))}
               </div>
