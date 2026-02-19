@@ -145,7 +145,7 @@ export default function DesignSystemDemo() {
           <span style={{ color: "#3f3f46" }}>Everything else is a surface.</span>
         </h1>
         <p style={{
-          fontSize: 15, color: "#3f3f46", maxWidth: 600, lineHeight: 1.6, margin: 0,
+          fontSize: 15, color: "#8a8f98", maxWidth: 600, lineHeight: 1.6, margin: 0,
           letterSpacing: "-0.01em",
         }}>
           Tokens describe intent, not values. Change a token on the left — watch it flow right.
@@ -537,7 +537,7 @@ export default function DesignSystemDemo() {
                 }}>{item.step}</span>
               </div>
               <h3 style={{ fontSize: 14, fontWeight: 600, color: "#d4d4d8", margin: "0 0 5px 0", letterSpacing: "-0.02em" }}>{item.head}</h3>
-              <p style={{ fontSize: 12, color: "#3f3f46", margin: 0, lineHeight: 1.6, letterSpacing: "-0.01em" }}>{item.body}</p>
+              <p style={{ fontSize: 12, color: "#8a8f98", margin: 0, lineHeight: 1.6, letterSpacing: "-0.01em" }}>{item.body}</p>
             </div>
           ))}
         </div>
@@ -563,7 +563,7 @@ export default function DesignSystemDemo() {
           </h2>
           <div style={{
             display: "flex", flexDirection: "column", gap: 20,
-            fontSize: 15, color: "#71717a", lineHeight: 1.7, letterSpacing: "-0.01em",
+            fontSize: 15, color: "#8a8f98", lineHeight: 1.7, letterSpacing: "-0.01em",
           }}>
             <p style={{ margin: 0 }}>
               There are two modes of design thinking. The verbal mode — "make the button bigger, add more spacing" — works

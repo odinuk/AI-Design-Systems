@@ -36,7 +36,7 @@ export default function ComponentExplorer({ tokens: t, primary, radius, headingW
             margin: '0 0 8px 0', lineHeight: 1.15, color: '#fafafa' }}>
             Components and variants
           </h2>
-          <p style={{ fontSize: 15, color: '#3f3f46', maxWidth: 540, lineHeight: 1.6, margin: 0, letterSpacing: '-0.01em' }}>
+          <p style={{ fontSize: 15, color: '#8a8f98', maxWidth: 540, lineHeight: 1.6, margin: 0, letterSpacing: '-0.01em' }}>
             Component tokens reference base tokens. Change{' '}
             <span style={{ fontFamily: mono, fontSize: 13, color: '#52525b' }}>color.action.primary</span>{' '}
             and every primary variant across every component updates. Override at the component level without breaking the system.
@@ -121,7 +121,7 @@ export default function ComponentExplorer({ tokens: t, primary, radius, headingW
           <div style={{ background: '#111114', padding: 28 }}>
             <p style={{ fontSize: 9, fontFamily: mono, color: '#52525b', textTransform: 'uppercase',
               letterSpacing: '0.08em', marginBottom: 6 }}>Token resolution</p>
-            <p style={{ fontSize: 12, color: '#3f3f46', margin: '0 0 20px 0', letterSpacing: '-0.01em', lineHeight: 1.5 }}>
+            <p style={{ fontSize: 12, color: '#8a8f98', margin: '0 0 20px 0', letterSpacing: '-0.01em', lineHeight: 1.5 }}>
               Each component token points upstream to a semantic token. Change the source, everything follows.
             </p>
 
